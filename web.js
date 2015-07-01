@@ -3,6 +3,7 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('*', function(request, response) {
+  console.log(JSON.stringify(request));
   response.redirect(process.env.NEW_BASE_URL + request.url)
 });
 
